@@ -184,7 +184,7 @@ transform: rotate(-45deg);
         text-align: center;
     }
     .dog-img2{
-        background-image: url("../img/Image\ \(8\).jpg");
+        background-image: url("img/Image\ \(8\).jpg");
         background-size: cover;  
         background-repeat: no-repeat;
         /* transform: scale(2); */
