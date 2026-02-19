@@ -201,20 +201,7 @@
   transform: translateX(0) translateY(-50%); /* 画面内にスライド */
 }
 
-/* #myText {
-    animation: floating 1.8s ease-in-out infinite alternate-reverse;
-    }
-    @keyframes floating {
-    0% {
-        transform: translateY(-20%);
-    }
-    100% {
-        transform: translateY(40%);
-    }
-}
-.stop {
-    animation-play-state: paused;
-} */
+
 #myText {
     animation: floating 1.8s ease-in-out infinite alternate;
     transition: transform 0.8s ease, opacity 0.5s ease;
@@ -262,3 +249,8 @@
         animation: bounce 2s ease-in-out infinite;
         will-change: transform;
     }
+@media (max-width: 768px){
+    .neumorphism-container{
+        min-height: 600px;
+    }
+}
