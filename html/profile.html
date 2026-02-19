@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>星野頼輝</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width , initial-scale=1"> <!--pcとスマホをスイッチするために必要なコード-->
+        <link rel="icon" href="img/favicon.ico">
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"> <!--cssリセット-->
+        <link rel="stylesheet" href="../css/profile.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="../js/main/profile.js" defer></script>
+    </head>
+    <body>
+            <div id="fade1" class="active"></div>
+    <div class="quiz-container">
+
+        <!-- 進捗表示 -->
+        <div id="progress">1 / 2</div>
+
+        <!-- 問題表示エリア -->
+        <h2 id="question-text"></h2>
+
+        <!-- 選択肢 -->
+        <div id="choices"></div>
+
+        <!-- 次へボタン -->
+        <button id="nextBtn">次へ</button>
+
+    </div>
+    <div id="fade1"></div>
+
+
+            <nav class="hanbar">
+                <!-- 開くボタン -->
+                <button type="button"  id="menu-open" class="button-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div id="menu-panel">
+                    <!-- 閉じるボタン -->
+                    <button type="button" id="menu-close" class="button-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <ul class="menu-list">
+                        <li><a href="main2.html">Hoshiono Raiki</a></li>
+                        <li><a href="dog.html">Dog</a></li>
+                        <li><a href="profile.html">Quiz</a></li>
+                        <li><a href="index.html">top</a></li>                        
+                    </ul>
+                </div>
+            </nav>
+    </body>
+</html>

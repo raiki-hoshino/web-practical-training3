@@ -1,0 +1,185 @@
+body {
+    margin:100px 0 100px 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8eef3;
+    }
+    
+    .yuzu{
+        text-align: center;
+        margin: 0 0 30px 0;
+        font-size: 2rem;
+    }
+
+    .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 横3つ */
+    grid-template-rows: repeat(4, auto);  /* 縦4つ */
+    gap: 2rem;
+        opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+    }
+    /* 画像順番に出す */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    /* 順番 */
+.grid img:nth-child(1) { animation-delay: 0.3s; }
+.grid img:nth-child(2) { animation-delay: 0.6s; }
+.grid img:nth-child(3) { animation-delay: 0.9s; }
+.grid img:nth-child(4) { animation-delay: 1.2s; }
+.grid img:nth-child(5) { animation-delay: 1.5s; }
+.grid img:nth-child(6) { animation-delay: 1.8s; }
+.grid img:nth-child(7) { animation-delay: 2.1s; }
+.grid img:nth-child(8) { animation-delay: 2.3s; }
+.grid img:nth-child(9) { animation-delay: 2.6s; }
+
+    .grid img {
+    width: 100%;
+    max-width: 250px; /* 画像サイズ調整 */
+    height: auto;
+    object-fit: cover;
+
+        opacity: 0;
+    animation-name: fadeUp;
+    animation-duration: 0.6s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    }
+
+/* 開閉ボタン */
+.button-menu{
+    position: fixed; /*位置を固定*/
+    right: 1rem; 
+    top: 1rem;
+    z-index: 4; /*重なり位置*/
+    padding: 0.5rem 1rem; /*内側余白*/
+    border: 1px solid rgb(1, 107, 7) ; /*枠線　実践　茶色 */
+    border-radius: 50%; /*角を丸める*/
+    height: 4rem;
+    width: 4rem;
+    background-color: antiquewhite;
+    
+}
+
+/*開くボタン*/
+#menu-open span{
+    width: 100%; /*横*/
+    height: 2px; /*高さ*/
+    background-color: black; /*背景色*/
+    position: relative; /*位置を相対化*/
+    display: block;
+}
+
+#menu-open span:nth-child(1){
+top: 0;
+}
+#menu-open span:nth-child(2){
+margin:  8px 0; /*外側余白*/
+}
+#menu-open span:nth-child(3){
+    top: 0;
+}
+#menu-close{
+    border: 1px solid rgb(0, 0, 0);
+}
+
+/*閉じるボタン*/
+#menu-close span{
+    width: 100%; /*横*/
+    height: 2px; /*高さ*/
+    background-color: rgb(0, 0, 0); /*背景色*/
+    position: relative; /*位置を相対化*/
+    display: block;
+}
+
+#menu-close span:nth-child(1){
+translate: 0 4px;
+transform: rotate(-315deg);
+}
+#menu-close span:nth-child(2){
+    opacity: 0;
+}
+#menu-close span:nth-child(3){
+transform: rotate(-45deg);
+}
+/* スライドメニューパネル */
+#menu-panel{
+  position: fixed; /* 位置固定 */
+  top: 0;     /* 上 */
+  right: 0;   /* 右 */
+  z-index: 10;   /* 重なり位置 */
+  padding: 8rem 2rem 2rem;    /* 内側余白 */
+  width: 20vw;    /* 横幅 */
+  height: 100vh;    /*縦幅  */
+    background-color: gray;
+    font-family: var(--oswald-font);
+    translate: 100%;
+    }
+
+    .menu-list{
+    list-style: none;
+    }
+
+    .menu-list li{
+    margin: 1.5rem 0;
+    opacity: 0;
+    font-family: fantasy;
+    }
+    .menu-list a{
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--light-grey);
+}
+.dogtext{
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start;
+        /* padding-top: 13vh; */
+    }
+
+    .quiz-container {
+        width: calc(100% - 24px);
+        padding: 20px;
+    }
+
+    #question-text {
+        font-size: 1.1rem;
+    }
+
+    #menu-panel{
+        width: 100vw;
+        opacity: 1;
+    }
+
+
+    .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 横3つ */
+    grid-template-rows: repeat(6, auto);  /* 縦4つ */
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+    /* margin-bottom: 10px; */
+
+    }
+    .grid-wrapper{
+        height: 220vh;
+    }
+    .dogtext{
+        text-align: center;
+    }
+}

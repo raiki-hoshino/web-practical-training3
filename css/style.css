@@ -1,0 +1,264 @@
+    .neumorphism-container {
+    padding: 60px;
+    background: #e8eef3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    }
+    /* ニューモーフィズムボタン */
+    .neu-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 40px;
+    background: #e8eef3;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow:
+    8px 8px 16px #c5ccd3,
+    -8px -8px 16px #ffffff;
+    transition: all 0.2s ease;
+    }
+    .neu-button:hover {
+    box-shadow:
+    4px 4px 8px #c5ccd3,
+    -4px -4px 8px #ffffff;
+    }
+    .neu-button:active {
+    box-shadow:
+    inset 4px 4px 8px #c5ccd3,
+    inset -4px -4px 8px #ffffff;
+    }
+    .neu-icon {
+    font-size: 24px;
+    }
+    .neu-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2d3748; /* コントラスト比4.5:1以上を確保 */
+    }
+
+    :root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    }
+
+#neuToggle {
+    background-color: #111;
+    color: #fff;
+}
+    body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s; /* 滑らかに切り替え */
+    }
+
+    /* ニューモーフィズムカード */
+    .neu-card {
+    width: 300px;
+    padding: 32px;
+    background: #e8eef3;
+    border-radius: 24px;
+    box-shadow:
+    12px 12px 24px #c5ccd3,
+    -12px -12px 24px #ffffff;
+    }
+    .neu-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    }
+    .status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #cbd5e0;
+    }
+    .status-indicator.active {
+    background: #48bb78;
+    box-shadow: 0 0 8px rgba(72, 187, 120, 0.5);
+    }
+    .neu-card-header h4 {
+    color: #2d3748;
+    font-size: 18px;
+    margin: 0;
+    }
+    /* プログレスバー */
+    .neu-progress-container {
+    height: 12px;
+    background: #e8eef3;
+    border-radius: 6px;
+    box-shadow:
+    inset 4px 4px 8px #c5ccd3,
+    inset -4px -4px 8px #ffffff;
+    overflow: hidden;
+    margin-bottom: 16px;
+    }
+    .neu-progress-bar {
+    height: 100%;
+    width: var(--progress);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 6px;
+    transition: width 0.5s ease;
+    }
+    .neu-stats {
+    font-family: fantasy;
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+    }
+    /* トグルスイッチ */
+    .neu-toggle-input {
+    display: none;
+    }
+    .neu-toggle {
+    display: block;
+    width: 80px;
+    height: 40px;
+    background: #2d3748;
+        /* background: #c5ccd3; */
+    border-radius: 20px;
+    box-shadow:
+    inset 4px 4px 8px #c5ccd3,
+    inset -4px -4px 8px #ffffff;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+
+    }
+
+    .neu-toggle::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 32px;
+    height: 32px;
+    background: #e8eef3;
+    border-radius: 50%;
+    box-shadow:
+    4px 4px 8px #c5ccd3,
+    -4px -4px 8px #ffffff;
+    transition: all 0.3s ease;
+    }
+    .neu-toggle-input:checked + .neu-toggle::after {
+    left: 44px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .neu-button disabled{
+        pointer-events: none;
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    .neu-text{
+    list-style: none;
+    }
+
+    .click-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .click-button:hover {
+        background-color: #0056b3;
+        transform: translateY(-3px);
+        }
+
+            .image-container {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        margin-top: 20px;
+        }
+
+
+.slide-image {
+  position: fixed;  /* 画面に固定 */
+  top: 50%;         /* 垂直方向は中央 */
+    left: 0;
+    width: 300px;     /* 画像サイズ */
+    height: 200px;
+    transform: translateX(-100%) translateY(-50%); /* 完全に左外に隠す */
+    transition: transform 1s ease;
+}
+
+.slide-image.show {
+  transform: translateX(0) translateY(-50%); /* 画面内にスライド */
+}
+
+/* #myText {
+    animation: floating 1.8s ease-in-out infinite alternate-reverse;
+    }
+    @keyframes floating {
+    0% {
+        transform: translateY(-20%);
+    }
+    100% {
+        transform: translateY(40%);
+    }
+}
+.stop {
+    animation-play-state: paused;
+} */
+#myText {
+    animation: floating 1.8s ease-in-out infinite alternate;
+    transition: transform 0.8s ease, opacity 0.5s ease;
+    width: 100px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    }
+
+    /* アニメーション */
+    @keyframes floating {
+    from {
+        transform: translateY(-20%);
+    }
+    to {
+        transform: translateY(40%);
+    }
+    }
+
+
+    /* 停止状態 */
+    #myText.stop {
+    animation-play-state: paused;
+    transform: translateY(0); /* 最終的にここに吸い付く */
+    }
+
+    #myText.fade-out{
+        opacity: 0;
+    }
+@keyframes bounce {
+            0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+    }
+    .profileBtn-animate{
+        animation: bounce 2s ease-in-out infinite;
+        will-change: transform;
+    }

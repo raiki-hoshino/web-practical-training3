@@ -1,0 +1,230 @@
+@charset "utf-8";
+
+/* 全体背景（未来感） */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e8eef3, #e8eef3);
+    font-family: "Segoe UI", sans-serif;
+    color: #0a0a23;
+    }
+
+    /* クイズカード */
+    .quiz-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #30caba;
+    text-align: center;
+    width: 400px;
+    
+    list-style: none; 
+}
+    
+    /* 進捗表示 */
+    #progress {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #414edc;
+    text-shadow: 0 0 10px #414edc;
+    }
+
+    /* 問題文 */
+    #question-text {
+    margin-bottom: 25px;
+    font-size: 20px;
+    }
+
+    /* ボタン共通 */
+    #choices button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: 2px solid #414edc;
+    background: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+
+    /* ホバー */
+    #choices button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #414edc;
+    }
+
+    /* 選択中 */
+    #choices button.selected {
+    
+    background: #69e80e;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 25px #414edc;
+    }
+        /* 選択中のボタン */
+        #choices button.selected {
+            background-color: #fdffa2;
+            border-color: #3399ff;
+        }
+    /* 次へボタン */
+    #nextBtn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    box-shadow: 0 0 20px #414edc;
+    transition: 0.3s;
+    }
+
+    #nextBtn:hover {
+    transform: scale(1.05);
+    }
+
+
+#fade1{
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    
+    pointer-events: none;
+    transition: opacity 2.6s ease-in;
+    z-index: 9999; 
+    opacity: 0; 
+    /* opacity: 1; */
+}
+/* もう一度ボタン */
+#retryBtn {
+    border-radius: 20%;
+    background-color: #30caba;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+#fade1.active {
+opacity: 1;
+}
+/* 
+#fade1:not(.active) {
+    opacity: 0;
+} */
+
+/* 開閉ボタン */
+.button-menu{
+    position: fixed; /*位置を固定*/
+    right: 1rem; 
+    top: 1rem;
+    z-index: 4; /*重なり位置*/
+    padding: 0.5rem 1rem; /*内側余白*/
+    border: 1px solid rgb(1, 107, 7) ; /*枠線　実践　茶色 */
+    border-radius: 50%; /*角を丸める*/
+    height: 4rem;
+    width: 4rem;
+    background-color: antiquewhite;
+    
+}
+
+/*開くボタン*/
+#menu-open span{
+    width: 100%; /*横*/
+    height: 2px; /*高さ*/
+    background-color: black; /*背景色*/
+    position: relative; /*位置を相対化*/
+    display: block;
+}
+
+#menu-open span:nth-child(1){
+top: 0;
+}
+#menu-open span:nth-child(2){
+margin:  8px 0; /*外側余白*/
+}
+#menu-open span:nth-child(3){
+    top: 0;
+}
+#menu-close{
+    border: 1px solid rgb(0, 0, 0);
+}
+
+/*閉じるボタン*/
+#menu-close span{
+    width: 100%; /*横*/
+    height: 2px; /*高さ*/
+    background-color: rgb(0, 0, 0); /*背景色*/
+    position: relative; /*位置を相対化*/
+    display: block;
+}
+
+#menu-close span:nth-child(1){
+translate: 0 4px;
+transform: rotate(-315deg);
+}
+#menu-close span:nth-child(2){
+    opacity: 0;
+}
+#menu-close span:nth-child(3){
+transform: rotate(-45deg);
+}
+/* スライドメニューパネル */
+#menu-panel{
+  position: fixed; /* 位置固定 */
+  top: 0;     /* 上 */
+  right: 0;   /* 右 */
+  z-index: 10;   /* 重なり位置 */
+  padding: 8rem 2rem 2rem;    /* 内側余白 */
+  width: 20vw;    /* 横幅 */
+  height: 100vh;    /*縦幅  */
+    background-color: gray;
+    font-family: var(--oswald-font);
+    translate: 100%;
+    }
+
+    .menu-list{
+    list-style: none;
+    }
+
+    .menu-list li{
+    margin: 1.5rem 0;
+    opacity: 0;
+    font-family: fantasy;
+    }
+    .menu-list a{
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--light-grey);
+}
+
+/* =====================
+スマホ対応
+===================== */
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start;
+        padding-top: 13vh;
+    }
+
+    .quiz-container {
+        width: calc(100% - 24px);
+        padding: 20px;
+    }
+
+    #question-text {
+        font-size: 1.1rem;
+    }
+
+    #menu-panel{
+        width: 100vw;
+        opacity: 1;
+    }
+
+
+
+}
