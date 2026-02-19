@@ -214,6 +214,7 @@ transform: rotate(-45deg);
     .quiz-container {
         width: calc(100% - 24px);
         padding: 20px;
+        margin-top: 35px;
     }
 
     #question-text {

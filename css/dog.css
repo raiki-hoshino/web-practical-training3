@@ -182,9 +182,11 @@ transform: rotate(-45deg);
     }
     .dogtext{
         text-align: center;
+            padding-left: 6px;
+    padding-right: 6px;
     }
     .dog-img2{
-        background-image: url("img/Image\ \(8\).jpg");
+        background-image: url("../img/yuzu-10.jpg");
         background-size: cover;  
         background-repeat: no-repeat;
         /* transform: scale(2); */
